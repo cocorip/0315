@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script type="text/javascript">
+function getFoodData(){
+	//$.ajax();
+	//json => javascript 객체 표기법 :: let snack = {name : "바나나킥", price : 4800 }
+	$.ajax({
+		type : "get",
+		url : "/day9/food0",
+		success : function(data){
+			alert(data);
+			console.log(data);
+			
+			$("#wrap").html(data);
+		},
+		error : function(){
+			console.log(에러남);
+		}
+	});
+	
+	
+}
+</script>
+</head>
+<body>
+<button onclick="getFoodData()">음식정보</button>
+<div id="wrap">
+</div>
+</body>
+</html>
